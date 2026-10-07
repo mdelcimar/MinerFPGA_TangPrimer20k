@@ -1,0 +1,73 @@
+// Sipeed Tang Primer 20K (core GW2A-LV18PG256C8/I7) + Dock ext-board
+// clock 27 MHz do core board
+IO_LOC  "clk27" H11;
+IO_PORT "clk27" IO_TYPE=LVCMOS33 PULL_MODE=NONE;
+// UART <-> BL702 (USB-C "JTAG&UART" do Dock)
+IO_LOC  "uart_tx" M11;
+IO_PORT "uart_tx" IO_TYPE=LVCMOS33 PULL_MODE=UP DRIVE=8;
+IO_LOC  "uart_rx" T13;
+IO_PORT "uart_rx" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+// LEDs 2..5 do Dock (ativos em nivel baixo)
+IO_LOC  "led_n[0]" N16;
+IO_LOC  "led_n[1]" N14;
+IO_LOC  "led_n[2]" L14;
+IO_LOC  "led_n[3]" L16;
+IO_PORT "led_n[0]" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8;
+IO_PORT "led_n[1]" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8;
+IO_PORT "led_n[2]" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8;
+IO_PORT "led_n[3]" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8;
+
+// DDR3 SDRAM (128Mbit = 16MB) - typical pin assignments for GW2A
+// DQ[15:0] data bus, BA[2:0] bank addresses, A[14:0] row/col addresses
+// DDR3 control: DDR3_CK, DDR3_CK_n, DDR3_RAS_n, DDR3_CAS_n, DDR3_WE_n, DDR3_ODT, DDR3_cke
+IO_LOC  "DDR3_CK" B8;
+IO_LOC  "DDR3_CK_n" B7;
+IO_LOC  "DDR3_RAS_n" A7;
+IO_LOC  "DDR3_CAS_n" A6;
+IO_LOC  "DDR3_WE_n" A5;
+IO_LOC  "DDR3_ODT" A4;
+IO_LOC  "DDR3_cke" A3;
+IO_LOC  "DDR3_DM" Y4;  // Write mask
+
+// DDR3 address pins
+IO_LOC  "DDR3_A0" R8;
+IO_LOC  "DDR3_A1" P8;
+IO_LOC  "DDR3_A2" P7;
+IO_LOC  "DDR3_A3" P6;
+IO_LOC  "DDR3_A4" N7;
+IO_LOC  "DDR3_A5" N6;
+IO_LOC  "DDR3_A6" N5;
+IO_LOC  "DDR3_A7" M7;
+IO_LOC  "DDR3_A8" M6;
+IO_LOC  "DDR3_A9" M5;
+IO_LOC  "DDR3_A10" L8;
+IO_LOC  "DDR3_A11" L7;
+IO_LOC  "DDR3_A12" K8;
+IO_LOC  "DDR3_A13" K7;
+
+// DDR3 bank addresses
+IO_LOC  "DDR3_BA0" K6;
+IO_LOC  "DDR3_BA1" J6;
+IO_LOC  "DDR3_BA2" J5;
+
+// DDR3 data bus (16 bits)
+IO_LOC  "DDR3_DQ0" H8;
+IO_LOC  "DDR3_DQ1" H7;
+IO_LOC  "DDR3_DQ2" G8;
+IO_LOC  "DDR3_DQ3" G7;
+IO_LOC  "DDR3_DQ4" F8;
+IO_LOC  "DDR3_DQ5" F7;
+IO_LOC  "DDR3_DQ6" E8;
+IO_LOC  "DDR3_DQ7" E7;
+IO_LOC  "DDR3_DQ8" D8;
+IO_LOC  "DDR3_DQ9" D7;
+IO_LOC  "DDR3_DQ10" C8;
+IO_LOC  "DDR3_DQ11" C7;
+IO_LOC  "DDR3_DQ12" B6;
+IO_LOC  "DDR3_DQ13" B5;
+IO_LOC  "DDR3_DQ14" A9;
+IO_LOC  "DDR3_DQ15" A8;
+
+// DDR3 power and termination
+IO_LOC  "DDR3_VCCQ" F5;
+IO_LOC  "DDR3_VTT" E5;
