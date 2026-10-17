@@ -1,5 +1,5 @@
 # Minerador v3 -- protocolo com preempcao de job (sem travar)
-<img src="Capture.png" width="300" />
+<img src="Captura.png" width="300" />
 ## O que mudou desde o v1
 O protocolo antigo (v1,v2) exigia STOP + esperar o engine ficar ocioso + so' entao
 enviar um novo JOB. Isso causava a sensacao de "travar" se o host reiniciasse
